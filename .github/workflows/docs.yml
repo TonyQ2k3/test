@@ -23,9 +23,11 @@ jobs:
         with:
           python-version: 3.x
 
-      - run: pip install zensical
+      - working-directory: main
+        run: pip install zensical
 
-      - run: zensical build --clean
+      - working-directory: main
+        run: zensical build --clean
 
       - name: Checkout gh-pages branch
         uses: actions/checkout@v5
